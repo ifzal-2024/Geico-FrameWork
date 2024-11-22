@@ -28,7 +28,16 @@ public class HomePage {
 		Thread.sleep(3000);
 		logo.click();
 		Thread.sleep(3000);
-		
+			}
+	
+	@FindBy(xpath = "//span[@class='header-link']")
+	WebElement menu;
+	
+	
+	public void clcikMenu() throws InterruptedException {
+		Thread.sleep(3000);
+		menu.click();
+		Thread.sleep(3000);
 	}
 
 }
