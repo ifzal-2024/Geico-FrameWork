@@ -16,4 +16,39 @@ public class HomePageTest extends BaseClass{
 	public void clcikMenuTest() throws InterruptedException {
 		homePage.clcikMenu();
 	}
+	
+	@Test
+	public void clickZipCodeTest() {
+		homePage.clickZipCode();
+	}
+	
+	@Test
+   
+	public void clickZipButtonTest() {
+		homePage.clickZipButton();
+	}
+	
+	
+@Test
+public void inputTextInZipcodeFiledTest() {
+	homePage.inputTextInZipcodeFiled();
 }
+
+@Test
+public void inputTextInZipcodeFiled2Test() {
+	homePage.inputTextInZipcodeFiled2();
+}
+
+@Test
+public void clickTermsConditionTest() {
+	homePage.clickTermsCondition();
+}
+
+@Test
+public void clickPrivacyPolicyTest() {
+	homePage.clickPrivacyPolicy();
+}
+
+}
+
+
