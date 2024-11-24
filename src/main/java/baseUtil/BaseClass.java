@@ -1,5 +1,4 @@
 package baseUtil;
-
 //Geico Base Class
 import java.time.Duration;
 
@@ -10,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
 
 public class BaseClass {
@@ -20,11 +20,12 @@ public class BaseClass {
 	@BeforeMethod
 	public void setUp() {
 		// System.setProperty("webdriver.com.driver","C:\\Users\\ifzal\\eclipse-workspace\\com.geico\\driver\\chromedriver.exe");
-		//driver = new ChromeDriver();
+		// driver = new ChromeDriver();
 
 		// 2nd way
-		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver.exe");
-		//driver = new ChromeDriver();
+		// System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+		// + "/driver/chromedriver.exe");
+		// driver = new ChromeDriver();
 
 		// 3rd Way
 		// 3rd and Final Way
@@ -38,13 +39,28 @@ public class BaseClass {
 		// For Edge Driver
 		// System.setProperty("webdriver.edge.driver", "./driver/msedgedriver.exe");
 		// driver = new EdgeDriver();
-		
-		
-		//driver.manage().window().fullscreen();
-		
+
+		// We need to add the WebDriverManager dependency in the pom.xml file
+		// When physical driver absent, or driver is not working, because of version
+		// issue, then you can use WebDriverManager
+		// WebDriverManager doesn't need any physical driver
+		// From below line, the most updated version of Chrome browser will be
+		// initialized, when no version is mentioned
+
+		 //WebDriverManager.chromedriver().setup();
+		 //driver = new ChromeDriver();
+
+		// WebDriverManager.firefoxdriver().setup();
+		// driver = new FirefoxDriver();
+
+		// WebDriverManager.edgedriver().setup();
+		// driver = new EdgeDriver();
+
+		// driver.manage().window().fullscreen();
+
 		// maximize method is used to maximize the window ---> mostly used
-	  driver.manage().window().maximize();
-	  driver.get("https://www.geico.com/");
+		driver.manage().window().maximize();
+		driver.get("https://www.geico.com/");
 		// HTTP cookies are small blocks of data created by a web server while a user is
 		// browsing a website
 		// deleteAllCookies do delete the cookies

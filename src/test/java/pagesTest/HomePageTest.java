@@ -49,6 +49,23 @@ public void clickPrivacyPolicyTest() {
 	homePage.clickPrivacyPolicy();
 }
 
+@Test
+public void clickStartMyQuoteTest() {
+	homePage.clickStartMyQuote();
+	
+	}
+@Test
+public void acceptPrivacyPolicyTest() {
+	homePage.acceptPrivacyPolicy();
+}
+
+
+@Test
+public void isEnabledMenuBarTest() {
+	homePage.isEnabledMenuBar();
+	
+}
+
 }
 
 
