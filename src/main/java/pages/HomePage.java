@@ -1,5 +1,10 @@
 package pages;
 //Geico FrameWork HomePage
+
+
+
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
@@ -29,7 +34,7 @@ public class HomePage {
 	
 	
 	@FindBy(xpath = "//span[@class='header-link']")
-	WebElement menu;
+	WebElement menuBar;
 	
 	@FindBy(xpath = "//input[@class='zip-code-input' and @id='ssp-service-zip']")
 	WebElement zipCode;
@@ -45,7 +50,8 @@ public class HomePage {
 	@FindBy(partialLinkText = "privacy pol")
 	WebElement privacyPolicy;
 	
-	
+	@FindBy(css = "modal-trigger.btn.btn--primary.btn--full-mobile")
+	WebElement startMyQuotElement;
 	
 	public void clickLogo() throws InterruptedException {
 		//common method pause used here
@@ -56,8 +62,10 @@ public class HomePage {
 			}
 	
 	public void clcikMenu() throws InterruptedException {
+		
 		Thread.sleep(3000);
-		menu.click();
+		System.out.println(driver.getTitle());
+		menuBar.click();
 		Thread.sleep(3000);
 	}
 
@@ -100,5 +108,30 @@ public class HomePage {
 		pause(3000);
 		
 	}
+	
+	public void clickStartMyQuote() {
+		pause(3000);
+	clickElement(startMyQuotElement);
+		pause(3000);
+		
+	}
+	
+	// CC Selector Using ID 
+	public void acceptPrivacyPolicy() {
+		driver.findElement(By.cssSelector("input#cookie-notice-close")).click();
+		pause(3000);
+		
+	}
+	
+	public void isEnabledMenuBar() { 
+		pause(3000);
+		elementDisplayed(menuBar);
+		pause(3000);
+		clickElement(menuBar);
+		pause(3000);
+		
+	}
+	
+	
 
 }
