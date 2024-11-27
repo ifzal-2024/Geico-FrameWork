@@ -124,6 +124,7 @@ public class HomePage {
 	}
 	
 	public void isEnabledMenuBar() { 
+		elementEnabled(menuBar);
 		pause(3000);
 		elementDisplayed(menuBar);
 		pause(3000);
