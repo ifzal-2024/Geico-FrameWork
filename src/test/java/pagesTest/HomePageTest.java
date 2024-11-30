@@ -66,6 +66,18 @@ public void isEnabledMenuBarTest() {
 	
 }
 
+@Test
+public void getmyQuoteFillUpTest() {
+	homePage.getmyQuoteFillUp();
+}
+
+@Test
+public void switch_between_window_test() {
+	homePage.switch_between_window();
+	
+}
+
+
 }
 
 
